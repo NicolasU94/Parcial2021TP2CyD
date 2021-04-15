@@ -3,7 +3,19 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    
+	
+	nums.sort(function(a,b){
+		return b - a;
+	});
+
+	const uniques = [...new Set(nums)];
+
+	if (nums.lenght < 3){
+		return undefined;
+	}
+
+	return uniques[2];
+
 }
 
 

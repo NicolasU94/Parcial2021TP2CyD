@@ -21,8 +21,10 @@
    * @param {*} discoveries 
    * @param {*} inventors 
    */
+
   function addDiscoveries(inventor, discoveries, inventors){
-      
+    return inventors
+                    .map(inv => inv.last === inventor ? inv = {...inv, discs: discoveries} : inv);
   }
 
   console.log(addDiscoveries('Einstein', 

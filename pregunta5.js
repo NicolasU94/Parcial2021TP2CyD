@@ -20,3 +20,39 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+
+function setLabel(beers){
+
+return beers.map(beer => ({...beer, label: getName(beer.name, beer.label)}))
+
+}
+
+function getName (name, label){
+
+  let newLabel = 'https://tecnoshare.sharepoint.com/sites/beer/';
+
+  const splitted = label.split('/');
+
+  const myFolder = splitted[5]
+
+  return `${newLabel}${myFolder}/${name}.png`
+
+}
+/*
+function getLabel(label){
+  let newLabel = 'https://tecnoshare.sharepoint.com/sites/beer/';
+
+
+  const splitted = label.split('/')
+  const fileName = splitted.pop();
+  const folder = splitted.pop();
+
+  console.log(fileName);
+  console.log(folder);
+
+  
+  return `${newLabel}${fileName}/${folder}`;
+}
+*/
+
+

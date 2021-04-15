@@ -14,8 +14,16 @@
     pants: 5,
   }
 
+
 const sale = function (article, cant){
-  
+  	 
+
+  	if (inventory[article] >= cant){
+  		inventory[article] -= cant;
+ 		return 200;
+  	}
+  	console.log('La venta no se pudo realizar');
+  	return 500;
 }
 
 // TESTS (no modificar)
